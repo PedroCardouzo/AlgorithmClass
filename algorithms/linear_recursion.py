@@ -14,5 +14,5 @@ def test():
         for test_case in test_cases:
             if not assert_result(test_case, find_greatest(test_case), max(test_case)):
                 break  # stop testing
-    except NotImplementedError
+    except NotImplementedError:
         pass
