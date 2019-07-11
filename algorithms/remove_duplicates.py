@@ -5,34 +5,14 @@ from util import assert_result
 # receives a list and returns another that is equal to the original, but without duplicate elements
 # time complexity: XXXX     space complexity: YYYY
 def remove_duplicates_simple(a_list):
-    # raise NotImplemented
-    length = len(a_list)
-    i = 0
-    while i < length:
-        value = a_list[i]
-        count = a_list.count(value)
-        if count == 1:
-            i += 1
-        else:
-            while count > 1:
-                a_list.remove(value)
-                count -= 1
-                length -= 1
-    return a_list
+    raise NotImplementedError
 
 
 # remove_duplicates_improved :: Eq a => [a] -> [a]
 # receives a list and changes it, removing duplicate elements
 # time complexity: XXXX     space complexity: YYYY
 def remove_duplicates_improved(a_list):
-    a_list.sort()
-    i = 1
-    while i < len(a_list):
-        if a_list[i - 1] == a_list[i]:
-            a_list.remove(a_list[i-1])
-        else:
-            i += 1
-    return a_list
+    raise NotImplementedError
 
 
 # remove_duplicates :: Eq a => [a] -> [a]
