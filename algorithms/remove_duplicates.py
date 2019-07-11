@@ -39,8 +39,7 @@ def remove_duplicates_improved(a_list):
 # receives a list and changes it, removing duplicate elements
 # time complexity: XXXX     space complexity: YYYY
 def remove_duplicates(a_list):
-    return list(set(a_list))
-
+    raise NotImplementedError
 
 def test():
     l1 = [0, 47, 74, 38, 24, 64, 6, 85, 80, 20, 34, 75, 45, 13, 4, 87, 43, 29, 30, 27, 0, 25, 84, 77, 21, 38, 10, 59, 95, 18, 36, 86, 45, 65, 87, 49, 14, 47, 13, 63, 20, 50, 86, 23, 97, 34, 38, 95, 5, 26, 11, 91, 94, 63, 73, 21, 1, 88, 27, 36, 42, 76, 19, 43, 46, 35, 30, 62, 65, 5, 95, 73, 88, 87, 16, 6, 70, 60, 29, 63, 18, 63, 71, 12, 66, 43, 94, 61, 98, 47, 48, 42, 79, 22, 40, 57, 20, 9, 24, 34]

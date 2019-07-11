@@ -5,34 +5,20 @@ from util import assert_result
 # given two lists of a type we can check for equality, returns a list with only elements present in both
 # time complexity: XXXX     space complexity: YYYY
 def get_common_elements_simple(list1, list2):
-    # raise NotImplemented
-    return [x for x in list1 if x in list2]
+    raise NotImplementedError
 
 
 # get_common_elements_simple :: Eq a => [a], [a] -> [a]
 # given two lists of a type we can check for equality, returns a list with only elements present in both
 # time complexity: XXXX     space complexity: YYYY
 def get_common_elements_improved(list1, list2):
-    list1.sort()
-    list2.sort()
-    i1, i2 = 0, 0
-    out = []
-    while i1 < len(list1) and i2 < len(list2):
-        if list1[i1] == list2[i2]:
-            out.append(list1[i1])
-            i1 += 1
-        elif list1[i1] < list2[i2]:
-            i1 += 1
-        else:
-            i2 += 1
-    return out
+    raise NotImplementedError
 
 # get_common_elements_simple :: Eq a => [a], [a] -> [a]
 # given two lists of a type we can check for equality, returns a list with only elements present in both
 # time complexity: XXXX     space complexity: YYYY
 def get_common_elements(list1, list2):
-    set1 = set(list1)
-    return [x for x in list2 if x in set1]
+    raise NotImplementedError
 
 
 def test():
