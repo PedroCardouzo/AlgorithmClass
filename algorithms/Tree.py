@@ -215,12 +215,18 @@ def test():
         t.left = sorted_list_to_balanced_bst(l[:mid])
         t.right = sorted_list_to_balanced_bst(l[mid+1:])
         return t
-
+    #################### begin ####################
     l = list(range(15))
     t = sorted_list_to_balanced_bst(l)
-    t.connect_brothers_and_cousins_inverse_iter()
-    t.pretty_print()
-    t.print_nexts_inverse(True)
-    print("#############################")
-    for el in t:
-        print(el, end=' ')
+    for el in [4,4,4,6,6]:
+        t.insert(el)
+    # t.connect_brothers_and_cousins_inverse_iter()
+    # t.pretty_print()
+    # t.print_nexts_inverse(True)
+    # print("#############################")
+    # for el in t:
+    #     print(el, end=' ')
+    from util import assert_result
+    expected = [4, 4, 4, 4, 5, 6, 6, 6, 7, 8]
+    assert_result(t, expected, t.get_range_iter(4, 8))
+    assert_result(t, expected, t.get_range(4, 8))
