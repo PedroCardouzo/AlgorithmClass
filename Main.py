@@ -14,5 +14,5 @@ if __name__ == '__main__':
     timeit(lambda: [is_prime_standard(el) for el in l])
     timeit(lambda: [is_prime(el) for el in l])
     print("Tree stuff")
-    from algorithms.remove_duplicates import test
+    from algorithms.linear_recursion import test
     test()
