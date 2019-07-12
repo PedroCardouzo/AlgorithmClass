@@ -3,9 +3,8 @@ from util import assert_result
 
 # remove_duplicates_simple :: Eq a => [a] -> [a]
 # receives a list and returns another that is equal to the original, but without duplicate elements
-# time complexity: XXXX     space complexity: YYYY
+# time complexity: O(n²)     space complexity: O(1)
 def remove_duplicates_simple(a_list):
-    # raise NotImplemented
     length = len(a_list)
     i = 0
     while i < length:
@@ -23,7 +22,7 @@ def remove_duplicates_simple(a_list):
 
 # remove_duplicates_improved :: Eq a => [a] -> [a]
 # receives a list and changes it, removing duplicate elements
-# time complexity: XXXX     space complexity: YYYY
+# time complexity: O(n logn)     space complexity: O(1)
 def remove_duplicates_improved(a_list):
     a_list.sort()
     i = 1
@@ -47,7 +46,7 @@ def test():
     l2 = [34, 99, 73, 84, 19, 81, 64, 91, 83, 10, 87, 9, 25, 27, 61, 76, 58, 47, 71, 14, 36, 89, 50, 49, 13, 6, 65, 30, 10, 64, 44, 41, 14, 66, 18, 94, 58, 61, 85, 68, 1, 62, 83, 80, 59, 44, 45, 21, 78, 2, 16, 14, 63, 76, 29, 46, 88, 7, 64, 72, 94, 45, 81, 96, 43, 9, 60, 61, 87, 71, 34, 23, 95, 46, 35, 98, 84, 17, 28, 68, 54, 36, 34, 44, 79, 92, 4, 90, 81, 27, 16, 70, 13, 62, 61, 87, 25, 51, 50, 47]
 
     test_cases = ([0, 47, 74, 38, 24, 64, 6, 85, 80, 20, 34, 75, 45, 0, 74, 47, 1, 1], l1, l2, [1, 2, 2, 2, 2, 2, 2, 2, 2],  [1, 5, 5, 5, 5, 5, 5],  [1, 2, 2, 2, 2, 2, 2, 2],  [1, 2, 2, 2, 2, 2, 2])
-    no_error = True
+    no_error = False
     for l in test_cases:
         try:
             expected = set(l)
