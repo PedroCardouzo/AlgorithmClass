@@ -257,8 +257,10 @@ def test():
     # t.connect_brothers_and_cousins_inverse_iter()
     # t.pretty_print()
     # t.print_nexts_inverse(True)
-    print("#############################")
-    for el in t:
-        print(el, end=' ')
-    print('')
-    print(t.get_range_iter(4, 8))
+    # print("#############################")
+    # for el in t:
+    #     print(el, end=' ')
+    from util import assert_result
+    expected = [4, 4, 4, 4, 5, 6, 6, 6, 7, 8]
+    assert_result(t, expected, t.get_range_iter(4, 8))
+    assert_result(t, expected, t.get_range(4, 8))
