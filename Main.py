@@ -13,3 +13,6 @@ if __name__ == '__main__':
     l = [a for a, _ in test_cases]*1000
     timeit(lambda: [is_prime_standard(el) for el in l])
     timeit(lambda: [is_prime(el) for el in l])
+    print("Tree stuff")
+    from algorithms.Tree import test
+    test()

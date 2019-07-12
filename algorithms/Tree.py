@@ -174,6 +174,46 @@ class Tree:
     def __eq__(self, other):
         return self.value == other.value and self.left == other.left and self.right == other.right
 
+    def get_range(self, min_value, max_value):
+        l = []
+
+        if min_value <= self.value <= max_value:
+            if self.left:
+                l = self.left.get_range(min_value, max_value)
+            l.append(self.value)
+            if self.right:
+                l += self.right.get_range(min_value, max_value)
+        elif self.value < min_value and self.right:
+            l = self.right.get_range(min_value, max_value)
+        elif self.value > max_value and self.left:
+            l = self.left.get_range(min_value, max_value)
+
+        return l
+
+    def get_range_iter(self, min_value, max_value):
+        return self._get_range_iter(self, min_value, max_value)
+
+    def _get_range_iter(self, node, min_value, max_value):
+        l = []
+        stack = deque()
+        stack.append((node, False))
+        while len(stack) > 0:
+            node, visited = stack.pop()
+            if visited:
+                l.append(node.value)
+            else:
+                if min_value <= node.value <= max_value:
+                    if node.right:
+                        stack.append((node.right, False))
+                    stack.append((node, True))
+                    if node.left:
+                        stack.append((node.left, False))
+                elif node.value < min_value and node.right:
+                    stack.append((node.right, False))
+                elif node.value > max_value and node.left:
+                    stack.append((node.left, False))
+        return l
+
 
 def test():
 
@@ -209,12 +249,16 @@ def test():
         t.left = sorted_list_to_balanced_bst(l[:mid])
         t.right = sorted_list_to_balanced_bst(l[mid+1:])
         return t
-
+    #################### begin ####################
     l = list(range(15))
     t = sorted_list_to_balanced_bst(l)
-    t.connect_brothers_and_cousins_inverse_iter()
-    t.pretty_print()
-    t.print_nexts_inverse(True)
+    for el in [4,4,4,6,6]:
+        t.insert(el)
+    # t.connect_brothers_and_cousins_inverse_iter()
+    # t.pretty_print()
+    # t.print_nexts_inverse(True)
     print("#############################")
     for el in t:
         print(el, end=' ')
+    print('')
+    print(t.get_range_iter(4, 8))
